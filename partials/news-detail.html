@@ -1,0 +1,94 @@
+<div class="row">
+    <div class="wrap">
+        <div class="row">
+            <div class="col-md-7 detail-title">
+                <h4>{{Content.material.title}}</h4>    
+                <a href="/#/home" style="color: #3389b6; text-transform: none;">Вернуться к новостям</a>
+            </div>   
+            <div class="col-md-4">
+                 <!--<div class="share42init" style="float:right;" data-title="{{test}}" data-description="{{test}}"></div>
+                <script type="text/javascript" src="http://inogamer/js/share42.js"></script> -->
+                 <div social></div>
+                
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-md-5 col-xs-5 col-sm-5 col-lg-5 detail-image">
+                <div class="row">
+                    <img src="/joomla/{{Content.material.images}}" alt="">
+                </div>
+                <div class="row">
+                    <div class="detail-small-images-cont">
+                        <img class="detail-small-image left" src="/joomla/{{Content.material.images}}" alt="">
+                        <img class="detail-small-image middle" src="/joomla/{{Content.material.images}}" alt="">
+                        <img class="detail-small-image right" src="/joomla/{{Content.material.images}}" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="read-also-cont">
+                        <h4>Читайте также</h4>   
+
+                        <div ng-repeat="item in otherNews track by $index">
+                            <div class="row also-row">
+                                <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
+                                    <img src="../{{item.images}}" alt="">
+                                </div>
+                                <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6">
+                                    <div class="also-title">
+                                        {{item.title}}
+                                    </div>
+                                    <i>{{item.introtext}}</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6">
+               <div class="row detail-text">
+                    <p class="intro">
+                        <b>{{Content.material.introtext}}</b>
+                    </p>
+                    <p ng-bind-html="Content.material.fulltext">
+                    </p>
+                </div>
+                <div class="row comments-cont">
+                    <h4>Комментарии к новости ({{comments.length}})</h4>   
+
+                    <div ng-repeat="item in comments track by $index">
+                        <div class="comment">
+                            <div class="row">
+                                <div class="col-md-1 col-xs-1 col-sm-1 col-lg-1" style="min-width: 90px;">
+                                    <div class="row">
+                                        <img src="/joomla/{{Content.material.images}}" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-xs-8 col-sm-8 col-lg-8">
+                                    <div class="row">
+                                        <div class="name">
+                                            {{item.username}}
+                                        </div>
+                                        <div class="time">
+                                            {{item.date}}
+                                        </div>
+                                        <div class="text">
+                                            <i>{{item.comment}}</i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="row add-comment">
+                        <div class="col-md-7 col-xs-7 col-sm-7 col-lg-7">
+                            <textarea ng-model="comment.comment" class="form-control" name="" id="" cols="30" ></textarea>
+                        </div>
+                        <div class="col-md-5 col-xs-5 col-sm-5 col-lg-5">
+                            <button ng-click="add_comment()"><i>Комментировать новость</i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

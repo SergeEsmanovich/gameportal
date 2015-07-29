@@ -1,0 +1,10 @@
+{
+    "elements": {
+        "mymenu": {}
+    },
+    "attributes": {
+        "infinite-scroll": {
+            "context": "div"
+        }
+    }
+}

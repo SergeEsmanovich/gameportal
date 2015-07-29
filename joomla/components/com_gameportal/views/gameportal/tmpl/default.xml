@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="Тут ничего не будет" option="">
+        <help
+            key="JHELP_MENUS_MENU_ITEM_WRAPPER"
+        />
+        <message>
+            Тут совсем ничего не будет
+        </message>
+    </layout>
+
+    <!-- Add fields to the parameters object for the layout. -->
+    <fields name="params">
+		
+
+		
+    </fields>
+</metadata>

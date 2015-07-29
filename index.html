@@ -1,29 +1,55 @@
 <!DOCTYPE html>
-<html ng-app="gameportal">
-    <head>
-        <title>тестовое титле</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--bootstrap begin-->
-        <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="/jquery_plugins/offcanvas.js"></script>
-        <!--bootstrap end-->
+<html ng-app="Gportal">
+<head>
+    <title>InoGamer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+    <!--bootstrap begin-->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css"> -->
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--<script src="/jquery_plugins/offcanvas.js"></script>-->
+    <!--bootstrap end-->
 
 
-        <link rel="stylesheet" href="css/style.css">
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <script src="/bower_components/angular/angular.min.js"></script>
-        <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
-        <script src="/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js"></script>
-        <script src="/js/app.js"></script>
-    </head>
-    <body ng-controller="HomeCtrl">
-        <div class="container-fluid">
-            <div class="row">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="/bower_components/angular/angular.min.js"></script>
+
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+
+    <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js"></script>
+    <!--inview-->
+    <script src="bower_components/angular-inview/angular-inview.js"></script>
+    <!--textAngular-->
+    <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css'>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.2/textAngular-sanitize.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.2/textAngular.min.js'></script>
+
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">-->
+
+    <script src="/js/app.js"></script>
+    <script src="/js/controllers.js"></script>
+    <script src="/js/services.js"></script>
+    <script src="/js/directives.js"></script>
+    <script type="text/javascript">
+    if($('.pluso-script').length)
+        $('.pluso-script').remove();
+    else
+        $('head').append($('<script/>').attr('type', 'text/javascript').attr('class', 'pluso-script').attr('src', 'http://share.pluso.ru/pluso-like.js'));
+    </script>
+</head>
+<body>
+    <!-- <div class="container-fluid height100"> -->
+        <!-- <div class="height100"> -->
+            <div class="fixed">
                 <div class="header visible-lg visible-md visible-sm">
                     <div class="search pull-right">
                         <div class="form-group  has-feedback">
@@ -32,82 +58,51 @@
                         </div>
                     </div>
                     <div class="logo">
-                        <div class="text"><span>News</span>Portal</div>  
-                        <div class="image"></div>
+                        <img src="/images/logo-text.png" alt="">
+<!--                            <div class="text"><span>News</span>Portal</div>  
+                            <div class="image"></div>
+                            <div class="clear"></div>-->
+                        </div>
+                        <div class="hello visible-lg">
+                            <p>   Madison volumes permanent effectively unexpected worried subsequent. Autumn cady</p> 
+                            <p>   meaningful pike brick offices dilemma. Pipe yelled exclusive sentence pond year's players</p> 
+                        </div>
                         <div class="clear"></div>
                     </div>
-                    <div class="hello visible-lg">
-                        <p>   Madison volumes permanent effectively unexpected worried subsequent. Autumn cady</p> 
-                        <p>   meaningful pike brick offices dilemma. Pipe yelled exclusive sentence pond year's players</p> 
-                    </div>
-                    <div class="clear"></div>
+                    <!--<div class="mini_header">
+                </div>-->
+            </div>
+            <div class="content">
+                <div  id="sidebar" class=" left_side">
+                    <mymenu></mymenu>
                 </div>
-                <div class="mini_header">
-                    <p class="pull-right showmenu">
-                        <button ng-click="sidebar_show()" type="button" class=" glyphicon glyphicon-align-justify" data-toggle="offcanvas"></button>
-                    </p>
-                    <!--                    <nav class="navbar navbar-default visible-xs navbar-fixed-top">
-                                            <div class="container">
-                                                <div class="navbar-header">
-                                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                                                        <span class="sr-only">Toggle navigation</span>
-                                                        <span class="icon-bar"></span>
-                                                        <span class="icon-bar"></span>
-                                                        <span class="icon-bar"></span>
-                                                    </button>
-                                                    <a class="navbar-brand" href="#">Project name</a>
-                                                </div>
-                                                <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
-                                                    <ul class="nav navbar-nav">
-                                                        <li ng-repeat="item in menu track by $index">
-                                                            <a data-target="#navbar" data-toggle="collapse" href="">{{item.title}}</a>
-                                                        </li>
-                                                    </ul>
-                                                </div> /.nav-collapse 
-                                            </div> /.container 
-                                        </nav>-->
-                </div>
-                <div class="row row-offcanvas row-offcanvas-left">
-                    <div  ng-class="{'active':sidebar}"  id="sidebar" class="sidebar-offcanvas col-xs-6 col-sm-2  col-lg-2 left_side">
-                        <ul>
-                            <li ng-click="set_filtr($index)" ng-class="{'checked':item.checked}" ng-repeat="item in menu track by $index">
-
-                                <span class="title">{{item.title}}</span> 
-                                <span ng-class="get_active()" class="icon fa {{item.icon}}"></span>
-
-                                <div class="clear"></div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div  class="col-md-12 col-lg-10">
-                        <div infinite-scroll='loadMore()' infinite-scroll-disabled='data.end' infinite-scroll-distance='0'>
-                            <div  ng-repeat="block in filteredContent($index) track by $index" class="col-md-6 col-sm-6 col-lg-4 test block">
-                                <div ng-show="filteredMaterials(material)" ng-repeat="material in block.block"  ng-class="get_class(block.block)" >
-                                    <!--{{$parent.$index}}-->
-                                    <div class="cant">
-                                        <div class="head">
-                                            <div class="date">
-                                                <span>20 мая 2015</span>
-                                                <i class="fa fa-user-secret"></i>
-                                            </div>
-                                            <img src="{{material.images}}" alt="">
-                                        </div>
-                                        <div class="intro_text">
-                                            <div class="title">{{material.title}}</div>
-                                            <div class="i_text" >{{material.introtext}}</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="clear"></div>
-
-
-
-<!--                            <img ng-repeat='image in images' ng-src='http://placehold.it/225x250&text={{image}}'>-->
-                        </div>
-                    </div>
+                <div class="view-container">
+                    <div ng-view class="view-frame"></div>
                 </div>
             </div>
-    </body>
+            
+
+        <!-- </div> -->
+         <div class="clear"></div>
+        
+         <div class="footer">
+            <div>
+                <div class="row img-cont">
+                    <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6">
+                        <img src="/images/logo-text.png" alt=""> 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 footer-text">
+                        Madison volumes permanent effectively unexpected worried subsequent. Autumn cady meaningful pike brick <br/> offices dilemma. Pipe yelled exclusive sentence pond year's players
+                    </div>
+                </div>
+                
+                
+
+            </div>
+            </div>
+
+    <!-- </div> -->
+</body>
 </html>

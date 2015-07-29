@@ -2,6 +2,26 @@
 Created on : 18.06.2015, 15:38:41
 Author     : korolariya
 */
+
+.container-fluid{
+    padding: 0px;
+}
+.copyright{
+    padding: 20px;
+    img{
+        width: 80px;
+    }
+    a{
+        color:#000;
+        font-family: 'Play', sans-serif;
+        font-size: 10px;
+        padding-left: 35px;
+        margin-top: -15px;
+        position: relative;
+        display: block;
+    }
+}
+
 .clear{
     clear: both;
 }
@@ -9,13 +29,45 @@ Author     : korolariya
     // border:1px solid red;    
 }
 .header{
-    background-color:  #333333;
-    height: 80px;
+    //background-color:  #333333;
+    background-image: url('../images/logo-head.png');
+    height: 70px;
 }
 .mini_header{
     background-color:  #77abc6;
-    height: 30px;
+    height: 20px;
     margin-bottom: 50px;
+
+}
+.fixed{
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+#sidebar{
+    z-index: 100;  
+    position: fixed;
+    height: 100%;
+    /*    .wr{
+            min-height:100%;
+            ul{
+                padding-bottom: 90px;
+            }
+        }*/
+    .copyright{
+        position: fixed;
+        left: 10px;
+        bottom: 5px;
+        width: 240px;
+    }
+}
+
+.content{
+    padding-top: 100px;
+}
+.wrap{
+    padding-left: 210px;
 }
 
 .block{
@@ -53,7 +105,11 @@ Author     : korolariya
             }
         }
         .intro_text{
-            height: 110px;
+            position: absolute;
+            bottom: 0;
+            margin-right: 30px;
+            margin-bottom: 25px;
+
             background: #4d4d4d;
 
             .title{
@@ -63,7 +119,7 @@ Author     : korolariya
                                 padding-top: 10px;
                                 padding-bottom: 10px;*/
                 font-weight: bold;
-                font-size: 16px;
+                font-size: 15px;
             }
             .i_text{
                 color:#fff;
@@ -74,6 +130,7 @@ Author     : korolariya
         .cant{
             //width: 420px;
             height: 346px;
+            overflow: hidden;
             /*            min-width:420px;
                         max-width: 420px;*/
             &:hover{
@@ -89,6 +146,16 @@ Author     : korolariya
         padding: 0px;
         padding-right: 25px;
         padding-bottom: 25px;
+
+        .grad{
+            background-image: url('../images/grad.png'); 
+            height: 20px;
+            bottom:25px;
+            z-index: 1;
+            width: 85%;
+            position: absolute;
+        }
+
         .cant{
 
             height: 346px;
@@ -99,13 +166,12 @@ Author     : korolariya
                 cursor: pointer;
                 .intro_text{
                     .title{
-                        color:#3389b6;
+                        color: #ffffff;
                     } 
                 }
             }
         }
         .head{
-            min-height: 135px;
             overflow: hidden;
             background: #ccc;
             .date{
@@ -127,8 +193,12 @@ Author     : korolariya
             }
         }
         .intro_text{
-            height: 186px; 
-            //    background: #ddd;
+            background-color: #4d4d4d;
+            color: #ffffff;
+
+            div.title{
+                color: #ffffff;
+            }
         }
 
         /*&:first-child{*/
@@ -143,7 +213,7 @@ Author     : korolariya
             .intro_text{
                 height: 186px; 
                 .title{
-                    color:#000;  
+                    color: #ffffff; 
                     font-weight: bold;
                     padding: 10px;
                     //  border-bottom: 1px solid #3389b6;
@@ -164,7 +234,7 @@ Author     : korolariya
 
 .header{
     .search{
-        padding-top: 27px;
+        padding-top: 18px;
         padding-right: 50px;
         input{
             &::-webkit-input-placeholder {color:#323232;}
@@ -179,21 +249,27 @@ Author     : korolariya
         font-size: 10px;
         float: left;
         font-weight: bold;
-        margin-left: 20px;
-        padding-top: 27px;
+        margin-left: 40px;
+        padding-top: 22px;
 
-        p{
+        display: inline-block;
+
+        p
+        {
             margin-bottom: 0px;
         }
     }
     .logo{
         float: left;
         padding-left: 78px;
-        padding-top: 18px;
+        padding-top: 10px;
         font-weight: bold;
         font-size: 30px;
         color:#fff;
         text-transform: uppercase;
+        img{
+            width: 200px;
+        }
         span{
             color:#77abc6;
         }
@@ -202,7 +278,8 @@ Author     : korolariya
             margin-right: 18px;
         }
         .image{
-            background: url('/images/logo.png');
+            background: url('/images/logo.png'); 
+            /*            background: url('/images/logo-gamer.png');*/
             width: 41px;
             height: 41px;
             float: left;
@@ -211,111 +288,257 @@ Author     : korolariya
 }
 
 .left_side{
+    width: 191px;
+
     ul{
+        padding: 0px !important;
         list-style: none;
     }
     li{
         text-align: right;
-
         text-transform: uppercase;
         font-size: 16px;
         font-weight: bold;
-        color:#838383;
-        padding-bottom: 20px;
+        color: #000000;
+        height: 30px;
+        margin-bottom: 5px;
         cursor:pointer;
 
         span.title{
-            border-right: 1px solid #3389b6;
-            padding-right: 12px;
-            //margin-right: 25px;
-            float: left;
-            width: 80%;
-        }
-        span.icon{
-            width: 12px;
-            height: 12px;
-            //    background: url('/images/menu_bg.png');
-            float: left;
-            margin-left: 10px;
-            margin-top: 5px;
-            &.active{
-                color: #3389b6;
-            }
-        }
-        span.icon:after{
-            clear: both;
+            vertical-align: middle;
+            
+            padding-top:   4px !important;
+            padding-right: 30px !important;
+            float: right;
+            width: 100%;
+            height: 100%;
         }
 
+        transition: all 0.3s;
+
+        &:hover{
+            background-position: 0px -30px;
+            color: #ffffff;
+        };
+
         &.checked{
-            color:#3389b6;
+            background-position: 0px -30px;
+            color: #ffffff;
         }
-        /*        &:nth-child(1){
-                span.icon{
-                    width: 10px;
-                    height: 15px;
-                    background: url('/images/all.png');
-                    background-position: 0px 0px;
-                    background-repeat: no-repeat;
-                    margin-top: 10px;
-                }
-            }
-            &:nth-child(2){
-                span.icon{
-                    background-position: 0px 0px;
-                }
-            }
-            &:nth-child(3){
-                span.icon{
-                    background-position: 0px -12px;
-                    margin-top: 5px;
-                }
-            }
-            &:nth-child(4){
-                span.icon{
-                    background-position: 0px -24px;
-                }
-            }
-            &:nth-child(5){
-                span.icon{
-                    background-position: 0px -36px;
-                }
-            }
-            &:nth-child(6){
-                span.icon{
-                    background-position: 0px -48px;
-                }
-            }
-            &:nth-child(7){
-                span.icon{
-                    background-position: 0px -60px;
-                }
-            }
-            &:nth-child(8){
-                span.icon{
-                    background-position: 0px -72px;
-                }
-            }
-            &:nth-child(9){
-                span.icon{
-                    background-position: 0px -84px;
-                }
-            }
-            &:nth-child(10){
-                span.icon{
-                    background-position: 0px -96px;
-                }
-            }
-            &:nth-child(11){
-                span.icon{
-                    background-position: 0px -108px;
-                }
-            }*/
+
 
     }
 }
+
 body{
     font-family: 'Open Sans', sans-serif;
+    overflow-x:hidden;
+
+    background-image: url('../images/bckgr.png');
 }
+
+
+.detail-image{
+    padding-left: 60px;
+    img{
+        width: 100%;
+    }
+}
+
+.detail-small-images-cont{
+    padding-top: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    display: inline-block;
+
+    .detail-small-image{
+        width: (100% / 3) !important;
+        float: left;
+    }
+
+    .left{
+        padding-right: (100% / 3) / 10;
+    }
+
+    .middle{
+        padding-left: (100% / 3) / 20;
+        padding-right: (100% / 3) / 20;
+    }
+
+    .right{
+        padding-left: (100% / 3) / 10;
+    }
+}
+
+.detail-title{
+    color: rgb(34, 109, 148);
+
+    padding-top: 5px;
+    padding-left: 45px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+
+    h4{
+        margin: 0;
+    }
+}
+
+.detail-text{
+    font-family: 'Open Sans';
+    text-align: justify;
+    padding-left: 30px;
+}
+
+
+.read-also-cont{
+    padding-top: 20px;
+    
+    h4{
+        color:#3389b6;
+        text-transform: uppercase;
+        padding-bottom: 20px;
+    }
+
+    .also-title{
+        color:#3389b6;
+        font-weight: bold;
+        margin-bottom: 15px; 
+    }  
+
+    .also-row{
+        margin-bottom: 30px;
+    }
+}
+
+.comments-cont{
+    padding-top: 20px;
+    padding-left: 30px;
+
+    color: #7a7a7a;
+
+    h4{
+        color:#3389b6;
+        text-transform: uppercase;
+        padding-bottom: 20px;
+    }
+
+    .comment{
+        border-bottom: 1px dotted black;
+        min-height: 100px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        img{
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            margin-left: 15px !important;
+        }
+        .name{
+            font-weight: 800;
+            color:#3389b6;
+            margin-left: 15px;
+            margin-top: -5px;
+            font-size: 16px;
+        }
+        .text{
+            margin-top: 10px;
+            margin-left: 15px;
+        }
+        .time{
+            margin-left: 15px;
+            font-size: 13px;
+        }
+    }
+
+    .add-comment{
+        margin-top: 30px;
+        padding-left: 10px;
+
+        button{
+            float:right;
+            color: #ffffff;
+            background-color: #226d97;
+            border-radius: 5px;
+            border: 0;
+            //width: 210px;
+            min-height: 35px;
+            margin-top: 8px;
+        }
+    }
+}
+
+#share42{
+    a{
+        border-radius: 30px;
+    }
+}
+
+.modal-title{
+    cursor: pointer;
+}
+
+.modal-header{
+    text-transform: uppercase;
+    color: #226d94;
+}
+
+@media (min-width: 768px){
+    .modal-dialog {
+        width: 650px;
+    }
+}
+
+
+div.modal-body {
+    padding: 0 !important;
+
+    div.modal-intro{
+        padding: 20px 30px;
+        font-weight: 900;
+    }
+
+    div.modal-fulltext{
+        padding: 30px 30px;
+        font-family: 'Open Sans';
+    }
+}
+
+div.modal-footer {
+    background-color: #e7eef2;
+    display: inline-block;
+    width: 100%;
+
+    div.footer-link{
+        cursor: pointer;
+        margin-top: 9px;
+    }
+}
+
+
+.footer{
+    margin-top: -160px;
+    width: 100%;
+    height: 160px;
+    bottom: 0;
+    background-color: #f2f2f2;
+    //margin-top: 40px;
+
+    font-family: Arial;
+    font-size: 13px;
+
+    .img-cont{
+        padding-top: 30px;
+        padding-left: 45%;
+        margin-bottom: 40px;
+    }
+
+    .footer-text{
+        text-align: center;
+    }
+}
+
 
 $count:100%;
 
@@ -358,6 +581,7 @@ $count:100%;
             height: auto;
             padding-right: 0px;
             padding-bottom: 5px;
+            color: #ffffff;
             .cant{
                 height: auto;  
 
@@ -366,6 +590,7 @@ $count:100%;
                 }
                 .intro_text{
                     height: auto;
+
                 }
 
             }
@@ -383,7 +608,6 @@ $count:100%;
             padding-bottom: 25px;
 
             .head{
-                height: 236px;
                 overflow: hidden;
                 background: #DDC;
                 img{
@@ -391,8 +615,7 @@ $count:100%;
                 }
             }
             .intro_text{
-                height: 110px;
-                background: #4d4d4d;
+                background-color: rgba(18, 88, 124, 0.7);
 
                 .title{
                     color:#fff;
@@ -400,18 +623,22 @@ $count:100%;
                     /*                padding-left: 10px;
                                     padding-top: 10px;
                                     padding-bottom: 10px;*/
-                    font-weight: bold;
-                    font-size: 16px;
+                    font-weight: 100;
+                    font-size: 16pt;
+                    font-family: Impact;
+                    text-transform: uppercase;
                 }
                 .i_text{
                     color:#fff;
                     padding-left: 10px;
                     font-size: 13px;
+                    font-family: Arial;
                 }
             }
             .cant{
                 //width: 420px;
                 height: 346px;
+                overflow: hidden;
                 /*            min-width:420px;
                             max-width: 420px;*/
                 &:hover{
@@ -428,7 +655,7 @@ $count:100%;
             padding-right: 25px;
             padding-bottom: 25px;
             .cant{
-
+                overflow: hidden;
                 height: 346px;
                 &:hover{
                     -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
@@ -443,7 +670,7 @@ $count:100%;
                 }
             }
             .head{
-                min-height: 135px;
+                //  min-height: 135px;  
                 overflow: hidden;
                 background: #ccc;
             }
@@ -462,10 +689,11 @@ $count:100%;
                     }
                 }
                 .intro_text{
-                    height: 186px; 
+                    min-height: 380px;
                     .title{
-                        color:#000;  
-                        font-weight: bold;
+                        font-family: 'Impact';
+                        font-weight: 100;
+                        font-size: 16px;
                         padding: 10px;
                         //  border-bottom: 1px solid #3389b6;
                     }
@@ -543,4 +771,21 @@ $count:100%;
         display: block;
     }
 }
+
+html{
+     height: 100%;
+}
+body{
+   height: 100%; 
+}
+.height100{
+    height: 100%;
+}
+
+
+.content{
+    min-height: 100%;
+    padding-bottom: 200px;
+}
+
 

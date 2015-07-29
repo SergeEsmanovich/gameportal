@@ -1,0 +1,17 @@
+<div class="wr">
+    <ul>
+        {{test}}
+        <li ng-click="set_filtr($index)" ng-class="{'checked':item.checked}" ng-repeat="item in menu track by $index" style="background-image: url({{item.image}}); background-repeat: no-repeat;">
+            <span class="title" >
+                {{item.title}}
+            </span>
+
+            <div class="clear"></div>
+        </li>
+    </ul>
+    <div class="copyright">
+        <img src="images/copyright.png" alt="">
+        <p><a target="_blank" href="http://xpride.by/">Power by xPRIDE.BY</a></p>
+    </div>
+</div>
+

@@ -1,0 +1,61 @@
+<div class="">
+    <div  class="col-md-12 col-lg-12 wrap">
+        <div infinite-scroll='Content.nextPage()' infinite-scroll-disabled='Content.end' infinite-scroll-distance='0'>
+            <div  ng-repeat="block in Content.conteiner track by $index" class="col-md-6 col-sm-6 col-lg-4 test block">
+                <div ng-click="load_modal_content(material)" data-toggle="modal" data-target="#myModal"  ng-repeat="material in block.block track by $index"  ng-class="get_class(block.block)" >
+                    <div class="cant">
+                        <div class="head">
+                            <div class="date">
+                                <span>{{material.created}}</span>
+                                <i class="fa fa-user-secret"></i>
+                            </div>
+                            <img src="/joomla/{{material.images}}" alt="">
+                        </div>
+                        <div class="intro_text">
+                            <div class="title">{{material.title}}</div>
+                            <div class="i_text" >{{material.introtext}}</div>
+                            <div class="grad"></div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <a ng-click="test()"><h4 class="modal-title" id="myModalLabel">{{modal.title}}</h4></a>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="clear" >
+                            <img class="col-md-12" src="/joomla/{{modal.images}}" style="margin: 0 !important;" alt="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 modal-fulltext">
+                            <div ng-bind-html="modal.fulltext"></div> 
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">  
+                   
+                    <div class="share42init" style="float:left;" data-title="{{test}}" data-description="{{test}}"></div>
+                    <script type="text/javascript" src="http://inogamer/js/share42.js"></script> 
+
+                    <div class="footer-link">
+                        <a  ng-click="test()">Открыть новость</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
